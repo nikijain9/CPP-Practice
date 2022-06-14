@@ -1,47 +1,39 @@
 #include <iostream>
+#include <iomanip>
 
 int main() {
-    //VARIABLE BASED INITIALIZATION
+    float number1 {1.12345678901234567890f}; // Precision : 7
+    double number2 {1.12345678901234567890}; // Precision : 15
+    long double number3  {1.12345678901234567890L}; 
 
-    int some_var;
-    int var_with_val {};
-    int var1 {10};
-    int var2 {15};
+    //print out the sizes
+    std :: cout << "Size of float is " << sizeof(float) << std :: endl;
+    std :: cout << "Size of double is " << sizeof(double) << std :: endl;
+    std :: cout << "Size of long double is " << sizeof(long double) << std :: endl;
 
-    std :: cout << some_var << std :: endl; //will print Garbage value
-    std :: cout << var_with_val << std :: endl;
-    int another_var {var1 + var2};
-    std :: cout << another_var << std :: endl;
+    //Precision
+    std :: cout << std :: setprecision(20) << std :: endl;   
+    std :: cout << "number1 is " << number1 << std :: endl;     // precision of 7
+    std :: cout << "number2 is " << number2 << std :: endl;     // precision of 12 - 15
+    std :: cout << "number3 is " << number3 << std :: endl;     // precision of 12 - 31
 
-//  int narrowing_conversion {2.9};     //Warning or Compilation Error
+    //Float problems : The precision is usually too limited
+    float number4 = 192400023.0f;       // Error : narrowing conversion
+    std :: cout << "number 4 is " << number4 << std :: endl;
+
+    std :: cout << "------------------------------" << std :: endl;
     
+    double number5 = 1542314665;
+    double number6 = 1.154885845e8;
+    double number7 = 1.548e8;
 
-    // FUNCTIONAL INITIALIZATION
-    int new_var;
-//  int var_val (); // this method of initialization will not work as compiler will consider it as a method
-    int var3 (20);
-    int var4 (30);
-    int another_new_var ( var3 + var4);
+    double number8 = 0.0000000000004548;
+    double number9 = 3.459e-11;
 
-    std :: cout << new_var << std :: endl;  //will print Garbage value
-    std :: cout << another_new_var << std :: endl;
-
-    //Information lost. Less safe than braced initializers
-    int narrowing_conversion (2.9);     // this variable can store the non decimal part through Functional initialization
-    std :: cout << narrowing_conversion << std :: endl;
-
-    //ASSIGNMENT NOTATION
-    int variable1 = 7;
-    int variable2 = 2;
-    int variable3 = variable1 + variable2;
-    int narrowing_conversion_assignment = 2.9;
-
-    std :: cout << variable1 << std :: endl;
-    std :: cout << variable2 << std :: endl;
-    std :: cout << variable3 << std :: endl;
-    std :: cout << narrowing_conversion_assignment << std :: endl;
-
-    std :: cout << sizeof(narrowing_conversion_assignment) <<std :: endl;
-
+    std :: cout << "number 5 is " << number5 <<std :: endl;
+    std :: cout << "number 6 is " << number6 <<std :: endl;
+    std :: cout << "number 7 is " << number7 <<std :: endl;
+    std :: cout << "number 8 is " << number8 <<std :: endl;
+    std :: cout << "number 9 is " << number9 <<std :: endl;
     return EXIT_SUCCESS;
 }
