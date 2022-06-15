@@ -36,5 +36,23 @@ int main() {
     std :: cout << "number 7 is " << number7 <<std :: endl;
     std :: cout << "number 8 is " << number8 <<std :: endl;
     std :: cout << "number 9 is " << number9 <<std :: endl;
+
+    //Infinity and NAN
+    std :: cout << "Infinity and NAN" << std :: endl;
+
+    double number10 {4.8};
+    double number11 {};
+    double number12 {};
+
+    //Infinity
+    double result {number10 / number11};
+
+    std :: cout << number10 << " / " << number11 << " yields " << result << std :: endl;
+    std :: cout << result   << " + " << number10 << " yields " << result + number10 << std :: endl;
+
+    //NAN
+    result = number11 / number12;
+
+    std :: cout << number11 << " / " << number12 << " yields " << result << std :: endl;
     return EXIT_SUCCESS;
 }
