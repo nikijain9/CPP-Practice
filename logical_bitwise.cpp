@@ -110,9 +110,5 @@ int main(){
 		<< std::setw(COLUMN_WIDTH) << std::bitset<8>(sandbox_var) << std::endl;
     std::cout << std::endl;
 
-
-
-
-   
     return 0;
 }
